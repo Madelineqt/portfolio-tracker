@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { StyleSheet, Text, View, Button,Card } from 'react-native';
 import { Row, Col } from 'react-native-responsive-grid-system';
 

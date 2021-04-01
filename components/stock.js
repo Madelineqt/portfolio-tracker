@@ -1,22 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button,Card } from 'react-native';
+import { StyleSheet, Text, View, Button,Card ,Alert } from 'react-native';
 import { Row, Col } from 'react-native-responsive-grid-system';
+
 
 export default function Stock(props) {
   return (
     <View style={styles.row}>
-      <Row  >
+        <Row >
         <Col colStyles={styles.col} xs={2} sm={2} md={2} lg={2}>
-            <Text style={styles.text}>APPL</Text>
+            <Text style={styles.text}>{props.stock.ticker}</Text>
         </Col>
-        <Col colStyles={styles.col} xs={4} sm={4} md={4} lg={4}>
-            <Text style={styles.text}>200 shares</Text>
+        <Col colStyles={styles.col} xs={3} sm={3} md={3} lg={2}>
+            <Text style={styles.text}>{props.stock.shares} shares</Text>
         </Col>
         <Col colStyles={styles.col} xs={2} sm={2} md={2} lg={2}>
-            <Text style={styles.text}>130€ ~</Text>
+            <Text style={styles.text}>{props.stock.price}€ ~</Text>
         </Col>
-        <Col colStyles={styles.colfinal} xs={4} sm={4} md={4} lg={4}>
-            <Text style={styles.text}>260€ (+100%)</Text>
+        <Col colStyles={styles.colfinal} xs={5} sm={5} md={5} lg={5}>
+            <Text style={styles.text}>{props.stock.currentPrice}€ ({props.stock.profit})</Text>
         </Col>
       </Row>
     </View>
